@@ -1,0 +1,302 @@
+[
+  {
+    "question": "How can I apply for admission?",
+    "answer": "You can apply through the university's official admission portal: register with your email and mobile number, fill in the application form, upload the required documents, pay the application fee and submit.",
+    "category": "Admissions",
+    "keywords": "apply, admission, application, process, register, portal, enroll, join"
+  },
+  {
+    "question": "What is the eligibility criteria for admission to B.Tech programs?",
+    "answer": "Candidates need to have passed 10+2 with Physics, Mathematics and one more science or technical subject, with at least 50% aggregate marks, and a valid entrance exam score where applicable.",
+    "category": "Admissions",
+    "keywords": "eligibility, criteria, btech, engineering, qualification, marks, percentage, requirements"
+  },
+  {
+    "question": "What documents are required for admission?",
+    "answer": "Please keep your Class 10 and Class 12 marksheets, transfer certificate, government ID proof, passport-size photographs, entrance exam scorecard and category certificate (if applicable) ready.",
+    "category": "Admissions",
+    "keywords": "documents, certificates, marksheet, required, upload, papers, proof"
+  },
+  {
+    "question": "What is the last date to apply for admission?",
+    "answer": "The admission calendar is published on the admission portal every year. Please check the notice section for the current application deadline.",
+    "category": "Admissions",
+    "keywords": "last date, deadline, due date, closing date, apply, admission schedule"
+  },
+  {
+    "question": "Does the university accept lateral entry admissions?",
+    "answer": "Yes. Diploma holders can apply for direct second-year entry, subject to eligibility and seat availability.",
+    "category": "Admissions",
+    "keywords": "lateral entry, diploma, second year, direct admission"
+  },
+  {
+    "question": "Which courses does the university offer?",
+    "answer": "The university offers undergraduate, postgraduate and diploma programs in engineering, management, computer applications, sciences and commerce. The complete list is available in the Academics section of the website.",
+    "category": "Courses",
+    "keywords": "courses, programs, programmes, degrees, branches, streams, offered, available"
+  },
+  {
+    "question": "What is the duration of the B.Tech program?",
+    "answer": "The B.Tech program is a four-year course divided into eight semesters.",
+    "category": "Courses",
+    "keywords": "duration, btech, years, semesters, length, how long"
+  },
+  {
+    "question": "How can I change my elective subjects?",
+    "answer": "Submit an elective change request through the student portal within the first two weeks of the semester. Approval depends on seat availability and the Head of Department.",
+    "category": "Courses",
+    "keywords": "elective, change, subject, switch, optional, modify"
+  },
+  {
+    "question": "Where can I find the syllabus for my course?",
+    "answer": "The syllabus is available on the university website under Academics, and in the course page of the learning management system.",
+    "category": "Courses",
+    "keywords": "syllabus, curriculum, course content, subjects, topics, download"
+  },
+  {
+    "question": "Does the university offer online or certificate courses?",
+    "answer": "Yes. Short-term certificate and online add-on courses in areas such as data science, cloud computing and communication skills are offered through the Centre for Continuing Education.",
+    "category": "Courses",
+    "keywords": "online courses, certificate, add-on, short term, skill, training, mooc"
+  },
+  {
+    "question": "What is the fee structure for undergraduate programs?",
+    "answer": "The fee depends on the program and includes tuition, development and examination fees. The detailed fee schedule is available in the Fees section of the website and at the accounts office.",
+    "category": "Fees",
+    "keywords": "fee structure, fees, tuition fee, tuition, cost, charges, undergraduate, how much, price"
+  },
+  {
+    "question": "How can I pay my tuition fee online?",
+    "answer": "Log in to the student portal, open Fees, choose Pay Now and pay by UPI, net banking or card. Download the receipt after payment.",
+    "category": "Fees",
+    "keywords": "pay fees, online payment, tuition, upi, net banking, card, receipt"
+  },
+  {
+    "question": "Can I pay the fees in installments?",
+    "answer": "Fees can be paid semester-wise. For installment options, contact the accounts office before the due date; a late fee may apply otherwise.",
+    "category": "Fees",
+    "keywords": "installment, instalment, emi, partial payment, split, semester wise"
+  },
+  {
+    "question": "What is the penalty for late fee payment?",
+    "answer": "A late fine is charged for every week of delay after the due date, as mentioned in the fee notice. In genuine cases you can apply to the accounts office for a waiver.",
+    "category": "Fees",
+    "keywords": "late fee, fine, penalty, due date, delay, overdue"
+  },
+  {
+    "question": "How do I get a fee refund if I withdraw from the program?",
+    "answer": "Submit a written withdrawal application with your fee receipt to the accounts office. Refunds are processed according to the university refund policy and the date of withdrawal.",
+    "category": "Fees",
+    "keywords": "refund, withdraw, cancel admission, money back, withdrawal"
+  },
+  {
+    "question": "When will the semester exam timetable be released?",
+    "answer": "The exam timetable is usually published two to three weeks before the exams on the examination portal and the notice board.",
+    "category": "Examinations",
+    "keywords": "timetable, exam schedule, date sheet, semester exam, datesheet, release"
+  },
+  {
+    "question": "How can I download my admit card?",
+    "answer": "Log in to the student portal, go to Examinations and select Admit Card. Your fee dues must be cleared and you must meet the attendance requirement.",
+    "category": "Examinations",
+    "keywords": "admit card, hall ticket, download, exam entry, examination"
+  },
+  {
+    "question": "How do I apply for re-evaluation of my answer sheet?",
+    "answer": "Apply through the examination portal within seven days of the result declaration and pay the re-evaluation fee for each subject.",
+    "category": "Examinations",
+    "keywords": "re-evaluation, revaluation, recheck, answer sheet, marks, scrutiny"
+  },
+  {
+    "question": "How are internal assessment marks distributed?",
+    "answer": "Internal marks combine class tests, assignments, attendance and the mid-semester exam. The exact scheme is given in the course handbook.",
+    "category": "Examinations",
+    "keywords": "internal marks, assessment, continuous evaluation, assignments, mid semester, grading"
+  },
+  {
+    "question": "When will the examination results be declared?",
+    "answer": "Results are usually declared within 30 to 45 days after the last exam and are published on the examination portal.",
+    "category": "Examinations",
+    "keywords": "result, declared, marks, score, grade card, announcement"
+  },
+  {
+    "question": "What is the minimum attendance required to appear in exams?",
+    "answer": "Students must have at least 75% attendance in each subject to be eligible for the end-semester examinations.",
+    "category": "Attendance",
+    "keywords": "minimum attendance, 75 percent, eligibility, exam, shortage, required"
+  },
+  {
+    "question": "How can I check my attendance record?",
+    "answer": "Log in to the student portal and open the Attendance section. Faculty members update it every week.",
+    "category": "Attendance",
+    "keywords": "check attendance, see attendance, view attendance, attendance record, portal, percentage"
+  },
+  {
+    "question": "What should I do if my attendance is below 75 percent?",
+    "answer": "Contact your class coordinator and apply for attendance condonation with valid supporting documents such as a medical certificate. Approval is at the discretion of the university and a condonation fee may apply.",
+    "category": "Attendance",
+    "keywords": "low attendance, shortage, condonation, below 75, detained, short"
+  },
+  {
+    "question": "How do I apply for medical leave?",
+    "answer": "Submit a leave application with a medical certificate to your department within three days of rejoining classes.",
+    "category": "Attendance",
+    "keywords": "medical leave, sick leave, illness, doctor certificate, absent"
+  },
+  {
+    "question": "Is attendance counted for events and sports participation?",
+    "answer": "Yes. Duty leave is granted for university-approved events and sports, provided you submit an approval letter from the coordinator in advance.",
+    "category": "Attendance",
+    "keywords": "duty leave, events, sports, competition, on duty, participation"
+  },
+  {
+    "question": "What scholarships are available for students?",
+    "answer": "The university offers merit-based, need-based and sports-quota scholarships, and supports students applying for government scholarships. Details are available at the scholarship cell.",
+    "category": "Scholarships",
+    "keywords": "scholarships, financial aid, funding, grants, available, assistance"
+  },
+  {
+    "question": "How can I apply for a merit scholarship?",
+    "answer": "Apply through the scholarship section of the student portal and upload your previous marksheets. Selection is based on academic performance.",
+    "category": "Scholarships",
+    "keywords": "merit scholarship, apply, marks, topper, academic performance"
+  },
+  {
+    "question": "What is the eligibility criteria for need-based scholarships?",
+    "answer": "You need a valid family income certificate and a minimum academic performance, as specified in the annual scholarship notice.",
+    "category": "Scholarships",
+    "keywords": "need based, income certificate, eligibility, financial need, economically weaker"
+  },
+  {
+    "question": "How do I apply for government scholarships on the National Scholarship Portal?",
+    "answer": "Register and apply on the National Scholarship Portal (scholarships.gov.in), then submit the application for verification to the university's nodal officer before the deadline.",
+    "category": "Scholarships",
+    "keywords": "nsp, national scholarship portal, government scholarship, nodal officer, apply, verification"
+  },
+  {
+    "question": "When will the scholarship amount be credited?",
+    "answer": "After verification, the amount is credited to your bank account or adjusted against your fees. The timeline depends on the scholarship provider.",
+    "category": "Scholarships",
+    "keywords": "scholarship amount, credited, disbursement, payment, bank account, when"
+  },
+  {
+    "question": "How does the placement process work?",
+    "answer": "The Training and Placement Cell runs registration, pre-placement training, company presentations, aptitude tests and interviews, and then releases offers to selected students.",
+    "category": "Placements",
+    "keywords": "placement process, campus recruitment, training, interviews, jobs, hiring, rounds"
+  },
+  {
+    "question": "Which companies visit the campus for recruitment?",
+    "answer": "Companies from IT, consulting, core engineering and banking sectors visit the campus. The list for each season is published by the Training and Placement Cell.",
+    "category": "Placements",
+    "keywords": "companies, recruiters, campus drive, visit, hiring, employers"
+  },
+  {
+    "question": "Who is eligible to participate in campus placements?",
+    "answer": "Final-year students registered with the placement cell, with no active backlogs and meeting the minimum CGPA set by the recruiting company, are eligible.",
+    "category": "Placements",
+    "keywords": "placement eligibility, backlog, cgpa, final year, registered, criteria"
+  },
+  {
+    "question": "Does the university provide internship opportunities?",
+    "answer": "Yes. The placement cell and departments arrange internships, especially summer internships after the second and third years.",
+    "category": "Placements",
+    "keywords": "internship, summer training, intern, industry experience, apprenticeship"
+  },
+  {
+    "question": "How can I prepare for placements?",
+    "answer": "Attend the aptitude, coding and communication training sessions, take mock interviews, and keep your resume updated with projects and certifications.",
+    "category": "Placements",
+    "keywords": "placement preparation, aptitude, mock interview, resume, coding practice, training"
+  },
+  {
+    "question": "How can I apply for hostel accommodation?",
+    "answer": "Apply through the hostel section of the student portal after your admission is confirmed. Rooms are allotted based on availability and distance from your home.",
+    "category": "Hostel",
+    "keywords": "hostel, accommodation, apply, room, stay, residence, allotment"
+  },
+  {
+    "question": "What are the hostel fees?",
+    "answer": "Hostel fees include room rent and mess charges per semester and vary by room type. The current fee list is available at the hostel office.",
+    "category": "Hostel",
+    "keywords": "hostel fees, room rent, mess charges, accommodation cost, charges"
+  },
+  {
+    "question": "What are the hostel timings and rules?",
+    "answer": "Gate closing time is set by the hostel warden. Late entry requires prior permission, and visitors must register at the gate.",
+    "category": "Hostel",
+    "keywords": "hostel timings, rules, curfew, gate, in time, warden, visitors"
+  },
+  {
+    "question": "Are food facilities available in the hostel mess?",
+    "answer": "Yes. The mess serves breakfast, lunch, evening snacks and dinner with vegetarian and non-vegetarian options. The menu changes weekly.",
+    "category": "Hostel",
+    "keywords": "mess, food, meals, canteen, menu, vegetarian, dining"
+  },
+  {
+    "question": "How can I report a maintenance problem in my hostel room?",
+    "answer": "Report it to the hostel warden or register it in the hostel complaint register. Maintenance staff will visit as soon as possible.",
+    "category": "Hostel",
+    "keywords": "hostel maintenance, complaint, repair, room problem, electricity, plumbing, fix"
+  },
+  {
+    "question": "What are the library opening hours?",
+    "answer": "The library is open from 9 AM to 8 PM on working days, with extended hours during the examination period.",
+    "category": "Library",
+    "keywords": "library timings, opening hours, open, closing time, hours, schedule"
+  },
+  {
+    "question": "How many books can I borrow from the library?",
+    "answer": "Undergraduate students can borrow up to three books for 14 days. Books can be renewed once if no one else has reserved them.",
+    "category": "Library",
+    "keywords": "borrow, issue books, limit, how many books, lending, renew"
+  },
+  {
+    "question": "What is the fine for late return of library books?",
+    "answer": "A fine is charged for each day a book is overdue. If a book is lost, you must replace it or pay its cost.",
+    "category": "Library",
+    "keywords": "library fine, late return, overdue, lost book, penalty"
+  },
+  {
+    "question": "How can I access e-books and online journals?",
+    "answer": "Log in to the library digital portal with your student credentials. Off-campus access is available through the university proxy or VPN.",
+    "category": "Library",
+    "keywords": "e-books, ebooks, journals, digital library, online resources, research papers, remote access"
+  },
+  {
+    "question": "How can I get a library membership card?",
+    "answer": "Library membership is created automatically at enrollment. Collect your library card from the library desk by showing your student ID.",
+    "category": "Library",
+    "keywords": "library card, membership, register, library id, join library"
+  },
+  {
+    "question": "I forgot my student portal password. How can I reset it?",
+    "answer": "Use the Forgot Password link on the login page. A one-time password will be sent to your registered email or mobile number. If that fails, contact the IT helpdesk.",
+    "category": "Technical Support",
+    "keywords": "forgot password, reset password, login problem, student portal, otp, cannot login"
+  },
+  {
+    "question": "How can I connect to the campus Wi-Fi?",
+    "answer": "Select the campus Wi-Fi network and sign in with your student ID and portal password. Some networks require your device to be registered with the IT helpdesk first.",
+    "category": "Technical Support",
+    "keywords": "wifi, wi-fi, internet, connect, network, campus wifi, hostel wifi, wifi not working, no internet, wireless"
+  },
+  {
+    "question": "How do I get my university email ID?",
+    "answer": "A university email ID is created after enrollment and the credentials are sent to your registered email or mobile number. Contact the IT helpdesk if you have not received it.",
+    "category": "Technical Support",
+    "keywords": "university email, email id, mail account, student email, credentials, official email"
+  },
+  {
+    "question": "The student portal is not loading. What should I do?",
+    "answer": "Clear your browser cache, try a different browser and check your internet connection. If the problem continues, email the IT helpdesk with a screenshot.",
+    "category": "Technical Support",
+    "keywords": "portal not loading, website down, error, slow, not working, technical issue, browser"
+  },
+  {
+    "question": "How can I contact the IT helpdesk?",
+    "answer": "Visit the IT helpdesk in the main building during working hours, or use the email address and phone number listed on the university website.",
+    "category": "Technical Support",
+    "keywords": "it helpdesk, contact, support, technical help, phone, email, reach"
+  }
+]
