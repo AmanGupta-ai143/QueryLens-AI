@@ -1,0 +1,38 @@
+/* Dark-mode overrides, applied on top of styles.css when the 🌙 switch is on. */
+:root { color-scheme: dark; --q-card: rgba(150,160,210,.10); --q-card-hover: rgba(124,92,255,.20);
+  --q-border: rgba(150,160,210,.28); --q-muted: #A9B0D0; }
+.stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"], [data-testid="stMain"] {
+  background-color: #0B1020 !important; }
+[data-testid="stSidebar"], [data-testid="stSidebar"] > div { background-color: #111733 !important; }
+[data-testid="stBottom"], [data-testid="stBottom"] > div, [data-testid="stBottomBlockContainer"] {
+  background-color: #0B1020 !important; }
+body, body p, body span, body label, body li, body h1, body h2, body h3, body h4, body h5,
+body div[data-testid="stMarkdownContainer"], body [data-testid="stMetricValue"],
+body [data-testid="stMetricLabel"] { color: #E8EAF6 !important; }
+body [data-testid="stCaptionContainer"], body [data-testid="stCaptionContainer"] *,
+body .stat-card .hint, body .stat-card .hint * { color: #A9B0D0 !important; }
+.hero, .hero * { color: #fff !important; }
+.bubble.user, .bubble.user * { color: #fff !important; }
+
+input, textarea, [data-baseweb="input"], [data-baseweb="textarea"], [data-baseweb="select"] > div,
+[data-testid="stChatInput"], [data-testid="stChatInput"] > div, [data-testid="stFileUploaderDropzone"] {
+  background-color: #1A2142 !important; color: #E8EAF6 !important; border-color: rgba(150,160,210,.35) !important; }
+input::placeholder, textarea::placeholder { color: #8A92B8 !important; }
+[data-baseweb="popover"], [data-baseweb="popover"] > div, [data-baseweb="menu"], ul[role="listbox"],
+ul[role="listbox"] li { background-color: #1A2142 !important; color: #E8EAF6 !important; }
+ul[role="listbox"] li:hover { background-color: #263063 !important; }
+
+.stButton > button, .stFormSubmitButton > button, .stDownloadButton > button {
+  background-color: #1A2142 !important; border-color: rgba(150,160,210,.35) !important; color: #E8EAF6 !important; }
+.stButton > button:hover, .stFormSubmitButton > button:hover { background-color: #263063 !important;
+  border-color: #7C5CFF !important; }
+[data-testid="stExpander"], [data-testid="stExpander"] details { background-color: transparent !important;
+  border-color: rgba(150,160,210,.28) !important; }
+[data-testid="stSidebarNav"] a[aria-current="page"],
+[data-testid="stSidebar"] a[data-testid="stSidebarNavLink"][aria-current="page"] {
+  background-color: rgba(124,92,255,.28) !important; }
+[data-testid="stCode"] pre, [data-testid="stCode"] code, pre, code { background-color: #1A2142 !important;
+  color: #E8EAF6 !important; }
+[data-testid="stDataFrame"] { filter: invert(.92) hue-rotate(180deg); }
+[data-testid="stAlert"] { background-color: rgba(124,92,255,.14) !important; }
+hr { border-color: rgba(150,160,210,.25) !important; }

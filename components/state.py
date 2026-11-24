@@ -18,3 +18,4 @@ def init_session() -> None:
     st.session_state.setdefault("threshold", DEFAULT_THRESHOLD)
     st.session_state.setdefault("pending_question", None)
     st.session_state.setdefault("topic", None)
+    st.session_state.setdefault("dark_mode", False)

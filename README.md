@@ -154,7 +154,7 @@ streamlit run app.py
 ```
 Open http://localhost:8501. On first start the database (`data/querylens.db`) is created and seeded with the 50 sample FAQs.
 Optional environment variables: `QUERYLENS_DB_PATH`, `QUERYLENS_THRESHOLD`, `QUERYLENS_TIMEZONE` (default `Asia/Kolkata`; timestamps are stored in UTC).
-Light/Dark theme: ⋮ menu → Settings → Theme.
+Light/Dark: use the 🌙 **Dark mode** switch at the top right of any page.
 
 ## Admin password
 Chatting, the dashboard, NLP Insights and browsing FAQs are public. **Adding/editing/deleting/importing FAQs, Conversation History and Unanswered Questions require the admin password**, which is never stored in the code. Without a configured password these features stay locked.

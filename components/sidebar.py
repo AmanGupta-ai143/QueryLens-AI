@@ -6,9 +6,10 @@ from config import ASSETS_DIR
 
 
 def load_css() -> None:
-    css_path = ASSETS_DIR / "styles.css"
-    if css_path.exists():
-        st.markdown(f"<style>{css_path.read_text(encoding='utf-8')}</style>", unsafe_allow_html=True)
+    """Base styles always; dark-mode overrides when the 🌙 switch is on."""
+    names = ["styles.css"] + (["dark.css"] if st.session_state.get("dark_mode") else [])
+    css = "\n".join((ASSETS_DIR / n).read_text(encoding="utf-8") for n in names if (ASSETS_DIR / n).exists())
+    st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
 
 def render_sidebar(ctx) -> None:
@@ -28,4 +29,3 @@ def render_sidebar(ctx) -> None:
         if is_admin():
             st.success("🔓 Admin mode is on")
             st.button("Log out", on_click=logout, key="admin_logout")
-        st.caption("🌗 Light / Dark / System: open the ⋮ menu (top right) → Settings → Theme.")

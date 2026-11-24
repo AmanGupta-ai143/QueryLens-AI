@@ -32,4 +32,9 @@ navigation = st.navigation([
     st.Page("pages/8_About.py", title="About Project", icon="ℹ️", url_path="about"),
 ])
 render_sidebar(ctx)
+
+# Light / Dark switch, visible at the top of every page
+_spacer, _switch = st.columns([5, 1.4])
+_switch.toggle("🌙 Dark mode", key="dark_mode")
+
 navigation.run()

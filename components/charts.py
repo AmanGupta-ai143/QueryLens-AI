@@ -1,8 +1,7 @@
 """Plotly charts built from real database records (None = nothing to plot).
 
-Fonts/axes/grid colours come from Streamlit's own Plotly theme
-(``st.plotly_chart(theme="streamlit")``), so every chart follows the app's
-light or dark mode. Backgrounds are transparent.
+Each chart uses a light or dark Plotly template depending on the app's
+🌙 Dark mode switch. Backgrounds are transparent.
 """
 import plotly.graph_objects as go
 
@@ -13,9 +12,18 @@ PALETTE = ["#7C5CFF", "#4F8BFF", "#22C1A9", "#F5A623", "#FF6B8B",
 GOOD, BAD, NEUTRAL = "#22C1A9", "#FF6B8B", "#9AA0B5"
 
 
+def _dark_mode() -> bool:
+    try:
+        import streamlit as st
+        return bool(st.session_state.get("dark_mode"))
+    except Exception:
+        return False
+
+
 def _style(fig: go.Figure, title: str, x: str | None = None, y: str | None = None,
            height: int = 380) -> go.Figure:
     fig.update_layout(
+        template="plotly_dark" if _dark_mode() else "plotly_white",
         title=dict(text=title, x=0.02, font=dict(size=16)),
         paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
         margin=dict(l=20, r=20, t=60, b=40), height=height,
