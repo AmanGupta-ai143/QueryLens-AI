@@ -103,7 +103,7 @@ def feedback_bar(df):
         text=s.values, textposition="outside",
         hovertemplate="%{x}: %{y} response(s)<extra></extra>",
     ))
-    fig.update_yaxes(rangemode="tozero")
+    fig.update_yaxes(rangemode="tozero", dtick=1 if s.max() < 8 else None)
     return _style(fig, "User feedback analysis", "Feedback type", "Number of responses")
 
 
@@ -115,7 +115,7 @@ def category_bar(df):
         x=s.index, y=s.values, marker_color=PALETTE[: len(s)],
         hovertemplate="%{x}: %{y} question(s)<extra></extra>",
     ))
-    fig.update_yaxes(rangemode="tozero")
+    fig.update_yaxes(rangemode="tozero", dtick=1 if s.max() < 8 else None)
     return _style(fig, "Questions by detected category", "Category", "Number of questions")
 
 
