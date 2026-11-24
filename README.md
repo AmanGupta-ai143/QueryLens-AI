@@ -5,13 +5,11 @@
 
 This is an internship learning/portfolio project and carries no official endorsement beyond the internship assignment. The bundled FAQ data is for a **fictional "Nova University"** – fees, dates and rules in it are illustrative.
 
-## Screenshots
+## Live demo
+🔗 **Try it:** https://querylens-ai-giyzxxjw37rl3aarfgsjb2.streamlit.app
+*(Free hosting: the first load after a quiet period can take up to a minute. Sample data is for a fictional "Nova University".)*
 
-| Chatbot | Dashboard |
-|---|---|
-| ![Chatbot](docs/screenshots/chatbot.png) | ![Dashboard](docs/screenshots/dashboard.png) |
-| **NLP Insights** | **FAQ Knowledge Base** |
-| ![NLP Insights](docs/screenshots/nlp_insights.png) | ![Knowledge Base](docs/screenshots/knowledge_base.png) |
+Pages: Chatbot · Dashboard · FAQ Knowledge Base · NLP Insights · Conversation History · Unanswered Questions · Feedback Analytics · About. Light/Dark switch at the top right.
 
 ## Problem statement
 Students ask the same questions again and again (admission, fees, exams, hostel…). Answering them manually is slow, and a keyword-only bot breaks as soon as a user words a question differently. QueryLens AI retrieves the most relevant FAQ using similarity-based NLP, shows a confidence score, and records everything it could *not* answer so the knowledge base improves over time.
