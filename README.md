@@ -33,7 +33,7 @@ Students ask the same questions again and again (admission, fees, exams, hostel�
 | **Conversation History** | Search, filter, view, delete, export CSV |
 | **Unanswered Questions** | Repeat counter, admin review, *create FAQ from question*, mark resolved |
 | **Feedback Analytics** | Helpful / not helpful / no feedback, FAQs needing human review (answers are **never** auto-edited) |
-| **Security** | Input validation, HTML escaping, parameterised SQL, upload limits, no hard-coded paths/credentials |
+| **Security** | Admin password for editing/review pages, input validation, HTML escaping, parameterised SQL, upload limits, no hard-coded paths/credentials |
 
 50 sample FAQs across 10 categories: Admissions, Courses, Fees, Examinations, Attendance, Scholarships, Placements, Hostel, Library, Technical Support.
 
@@ -135,7 +135,7 @@ QueryLens-AI/
 ├── components/             # sidebar, chat_interface, dashboard_cards, charts
 ├── data/                   # sample_faqs.json (+ build_sample_faqs.py)
 ├── assets/                 # logo.png, styles.css
-├── tests/                  # unit tests (51)
+├── tests/                  # unit tests (55)
 └── .streamlit/config.toml  # theme
 ```
 
@@ -156,16 +156,21 @@ Open http://localhost:8501. On first start the database (`data/querylens.db`) is
 Optional environment variables: `QUERYLENS_DB_PATH`, `QUERYLENS_THRESHOLD`, `QUERYLENS_TIMEZONE` (default `Asia/Kolkata`; timestamps are stored in UTC).
 Light/Dark theme: ⋮ menu → Settings → Theme.
 
+## Admin password
+Chatting, the dashboard, NLP Insights and browsing FAQs are public. **Adding/editing/deleting/importing FAQs, Conversation History and Unanswered Questions require the admin password**, which is never stored in the code. Without a configured password these features stay locked.
+- **Locally:** copy `.streamlit/secrets.toml.example` to `.streamlit/secrets.toml` and set `ADMIN_PASSWORD`, or set the environment variable `QUERYLENS_ADMIN_PASSWORD`.
+- **Streamlit Cloud:** App → Settings → Secrets → add `ADMIN_PASSWORD = "your-password"`.
+
 ## Testing
 ```bash
 python -m unittest discover -s tests -t . -v     # or: pip install -r requirements-dev.txt && pytest
 ```
-51 automated tests cover: exact question, different wording, spelling mistakes, extra spaces, capitalisation, unrelated question, empty question, FAQ add/edit/delete, conversation history, helpful / not-helpful feedback, unanswered storage (and repeat counting), dashboard statistics, similarity score calculation, threshold validation, CSV-import safety.
+55 automated tests cover: exact question, different wording, spelling mistakes, extra spaces, capitalisation, unrelated question, empty question, FAQ add/edit/delete, conversation history, helpful / not-helpful feedback, unanswered storage (and repeat counting), dashboard statistics, similarity score calculation, threshold validation, CSV-import safety.
 
 ## Limitations
 - Lexical matching only (see above); English only.
 - Sample data is fictional and small (50 FAQs).
-- No admin login – anyone with access to the app can edit the knowledge base. Add authentication before real use.
+- Admin protection is a single shared password (fine for a demo; use real user accounts for production).
 - SQLite on free cloud hosting may not persist between restarts.
 
 ## Future improvements

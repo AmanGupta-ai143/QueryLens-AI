@@ -1,5 +1,6 @@
 import streamlit as st
 
+from components.auth import require_admin
 from components.compat import empty_state
 from components.dashboard_cards import hero, render_cards
 from components.state import get_ctx, init_session
@@ -11,6 +12,9 @@ ctx = get_ctx()
 
 hero("Unanswered Questions", "Questions the chatbot could not answer confidently - review them and grow the knowledge base.",
      badge="🧭 Admin review")
+
+if not require_admin("The unanswered-questions review", "unans"):
+    st.stop()
 
 counts = ctx.unanswered.counts()
 render_cards([

@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 
+from components.auth import require_admin
 from components.compat import empty_state, show_table
 from components.dashboard_cards import hero
 from components.state import get_ctx, init_session
@@ -39,65 +40,68 @@ with tab_browse:
 
 # --------------------------------------------------------------------- add
 with tab_add:
-    with st.form("add_faq_form", clear_on_submit=True):
-        q = st.text_input("Question", max_chars=MAX_FAQ_QUESTION_LENGTH)
-        a = st.text_area("Answer", max_chars=MAX_FAQ_ANSWER_LENGTH, height=130)
-        cat = st.selectbox("Category", CATEGORIES)
-        kw = st.text_input("Keywords (comma separated)", placeholder="fee, tuition, payment")
-        if st.form_submit_button("Add FAQ"):
-            try:
-                new_id = ctx.add_faq(q, a, cat, kw)
-                st.success(f"FAQ #{new_id} added.")
-            except (ValidationError, DatabaseError) as exc:
-                st.error(str(exc))
+    if require_admin("Adding FAQs", "kb_add"):
+        with st.form("add_faq_form", clear_on_submit=True):
+            q = st.text_input("Question", max_chars=MAX_FAQ_QUESTION_LENGTH)
+            a = st.text_area("Answer", max_chars=MAX_FAQ_ANSWER_LENGTH, height=130)
+            cat = st.selectbox("Category", CATEGORIES)
+            kw = st.text_input("Keywords (comma separated)", placeholder="fee, tuition, payment")
+            if st.form_submit_button("Add FAQ"):
+                try:
+                    new_id = ctx.add_faq(q, a, cat, kw)
+                    st.success(f"FAQ #{new_id} added.")
+                except (ValidationError, DatabaseError) as exc:
+                    st.error(str(exc))
 
 # -------------------------------------------------------------- edit/delete
 with tab_edit:
-    all_faqs = ctx.faqs.list()
-    if not all_faqs:
-        empty_state("The knowledge base is empty.")
-    else:
-        labels = {f["id"]: f"#{f['id']} · [{f['category']}] {f['question']}" for f in all_faqs}
-        faq_id = st.selectbox("Choose an FAQ", list(labels), format_func=labels.get, key="edit_select")
-        faq = ctx.faqs.get(faq_id)
-        if faq:
-            with st.form(f"edit_faq_form_{faq_id}"):
-                q = st.text_input("Question", value=faq["question"], max_chars=MAX_FAQ_QUESTION_LENGTH)
-                a = st.text_area("Answer", value=faq["answer"], max_chars=MAX_FAQ_ANSWER_LENGTH, height=130)
-                cat = st.selectbox("Category", CATEGORIES,
-                                   index=CATEGORIES.index(faq["category"]) if faq["category"] in CATEGORIES else 0)
-                kw = st.text_input("Keywords", value=faq["keywords"])
-                if st.form_submit_button("Save changes"):
+    if require_admin("Editing or deleting FAQs", "kb_edit"):
+        all_faqs = ctx.faqs.list()
+        if not all_faqs:
+            empty_state("The knowledge base is empty.")
+        else:
+            labels = {f["id"]: f"#{f['id']} · [{f['category']}] {f['question']}" for f in all_faqs}
+            faq_id = st.selectbox("Choose an FAQ", list(labels), format_func=labels.get, key="edit_select")
+            faq = ctx.faqs.get(faq_id)
+            if faq:
+                with st.form(f"edit_faq_form_{faq_id}"):
+                    q = st.text_input("Question", value=faq["question"], max_chars=MAX_FAQ_QUESTION_LENGTH)
+                    a = st.text_area("Answer", value=faq["answer"], max_chars=MAX_FAQ_ANSWER_LENGTH, height=130)
+                    cat = st.selectbox("Category", CATEGORIES,
+                                       index=CATEGORIES.index(faq["category"]) if faq["category"] in CATEGORIES else 0)
+                    kw = st.text_input("Keywords", value=faq["keywords"])
+                    if st.form_submit_button("Save changes"):
+                        try:
+                            ctx.update_faq(faq_id, q, a, cat, kw)
+                            st.success("FAQ updated.")
+                        except (ValidationError, NotFoundError, DatabaseError) as exc:
+                            st.error(str(exc))
+                st.caption(f"Created {faq['created_at']} UTC · last updated {faq['updated_at']} UTC")
+                st.markdown("**Danger zone**")
+                confirm = st.checkbox("I understand this FAQ will be permanently deleted", key=f"confirm_del_{faq_id}")
+                if st.button("🗑️ Delete this FAQ", disabled=not confirm, key=f"del_{faq_id}"):
                     try:
-                        ctx.update_faq(faq_id, q, a, cat, kw)
-                        st.success("FAQ updated.")
-                    except (ValidationError, NotFoundError, DatabaseError) as exc:
+                        ctx.delete_faq(faq_id)
+                        st.success("FAQ deleted.")
+                        st.rerun()
+                    except DatabaseError as exc:
                         st.error(str(exc))
-            st.caption(f"Created {faq['created_at']} UTC · last updated {faq['updated_at']} UTC")
-            st.markdown("**Danger zone**")
-            confirm = st.checkbox("I understand this FAQ will be permanently deleted", key=f"confirm_del_{faq_id}")
-            if st.button("🗑️ Delete this FAQ", disabled=not confirm, key=f"del_{faq_id}"):
-                try:
-                    ctx.delete_faq(faq_id)
-                    st.success("FAQ deleted.")
-                    st.rerun()
-                except DatabaseError as exc:
-                    st.error(str(exc))
 
 # ------------------------------------------------------------------ import
 with tab_import:
-    st.markdown("Upload a **.csv** file (max 1 MB, 500 rows) with the columns "
-                "`question, answer, category` and optionally `keywords`.")
-    st.caption("Categories must be: " + ", ".join(CATEGORIES))
-    upload = st.file_uploader("CSV file", type=["csv"], key="kb_import")
-    if upload is not None and st.button("Import FAQs", key="kb_import_btn"):
-        try:
-            report = ctx.import_faqs_csv(upload.getvalue(), upload.name)
-            st.success(f"Imported {report['added']} FAQ(s); skipped {report['skipped']}.")
-            for line in report["errors"][:15]:
-                st.caption("• " + line)
-        except (ValidationError, DatabaseError) as exc:
-            st.error(str(exc))
+    if require_admin("Importing FAQs", "kb_import"):
+        st.markdown("Upload a **.csv** file (max 1 MB, 500 rows) with the columns "
+                    "`question, answer, category` and optionally `keywords`.")
+        st.caption("Categories must be: " + ", ".join(CATEGORIES))
+        upload = st.file_uploader("CSV file", type=["csv"], key="kb_import")
+        if upload is not None and st.button("Import FAQs", key="kb_import_btn"):
+            try:
+                report = ctx.import_faqs_csv(upload.getvalue(), upload.name)
+                st.success(f"Imported {report['added']} FAQ(s); skipped {report['skipped']}.")
+                for line in report["errors"][:15]:
+                    st.caption("• " + line)
+            except (ValidationError, DatabaseError) as exc:
+                st.error(str(exc))
 
 # --------------------------------------------------------------- most asked
 with tab_top:

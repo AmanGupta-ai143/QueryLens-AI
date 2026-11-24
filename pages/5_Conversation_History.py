@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 
+from components.auth import require_admin
 from components.compat import empty_state
 from components.dashboard_cards import hero
 from components.state import get_ctx, init_session
@@ -11,6 +12,9 @@ ctx = get_ctx()
 
 hero("Conversation History", "Search, review and delete previous conversations stored in SQLite.",
      badge="🕘 History")
+
+if not require_admin("Conversation history", "hist"):
+    st.stop()
 
 st.caption("Click a row to read the full conversation, see the matched FAQ and feedback, or delete it.")
 c1, c2, c3 = st.columns([3, 1.4, 1.2])

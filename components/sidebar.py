@@ -1,6 +1,7 @@
 """CSS loading and the settings block shown under the page navigation."""
 import streamlit as st
 
+from components.auth import is_admin, logout
 from config import ASSETS_DIR
 
 
@@ -24,4 +25,7 @@ def render_sidebar(ctx) -> None:
             f'<div class="side-box">📚 <b>{ctx.faqs.count()}</b> FAQs in the knowledge base<br>'
             f'💬 <b>{ctx.conversations.count()}</b> conversations stored</div>',
             unsafe_allow_html=True)
+        if is_admin():
+            st.success("🔓 Admin mode is on")
+            st.button("Log out", on_click=logout, key="admin_logout")
         st.caption("🌗 Light / Dark / System: open the ⋮ menu (top right) → Settings → Theme.")
