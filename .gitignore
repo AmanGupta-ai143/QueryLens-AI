@@ -21,3 +21,6 @@ data/*.db-journal
 Thumbs.db
 .idea/
 .vscode/
+
+# Helper script (not part of the app)
+push_to_github.bat
